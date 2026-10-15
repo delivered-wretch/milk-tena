@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kilimani Hills Dairy – Fresh Milk from Kiambu, Kenya</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f8f3;--surface:#fff;--ink:#17261d;--mute:#5a6a60;--green:#1f4d33;--green2:#2f7a50;--maize:#e9b82e;--line:#dce4da;--on-green:#f6f8f3;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f1913;--surface:#16241b;--ink:#eaf1ea;--mute:#9db0a2;--green:#7fd0a0;--green2:#5bbd86;--line:#27382c;--on-green:#0f1913}}
+:root[data-theme="dark"]{--bg:#0f1913;--surface:#16241b;--ink:#eaf1ea;--mute:#9db0a2;--green:#7fd0a0;--green2:#5bbd86;--line:#27382c;--on-green:#0f1913}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.6 Figtree,system-ui,sans-serif}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,sans-serif;line-height:1.1;margin:0 0 .5em;letter-spacing:-.02em}
+h1{font-size:clamp(2.4rem,7vw,4.6rem);font-weight:800}
+h2{font-size:clamp(1.8rem,4vw,2.7rem);font-weight:700}
+h3{font-size:1.25rem;font-weight:700}
+p{margin:0 0 1em;max-width:62ch}
+a{color:inherit}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.btn{display:inline-block;border:0;cursor:pointer;font:600 1rem Figtree,sans-serif;padding:14px 24px;border-radius:999px;background:var(--green);color:var(--on-green);text-decoration:none}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.btn.maize{background:var(--maize);color:#2a2000}
+:focus-visible{outline:3px solid var(--maize);outline-offset:2px}
+header{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:62px}
+.logo{font:800 1.2rem 'Bricolage Grotesque',sans-serif;text-decoration:none;color:var(--green)}
+nav{display:flex;gap:22px;align-items:center}
+nav a{text-decoration:none;font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--green2)}
+.menu{display:none}
+.hero{padding:56px 0 72px;background:var(--green);color:var(--on-green)}
+.hero .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+.hero p{font-size:1.15rem;opacity:.92}
+.hero .btn.alt{color:var(--on-green);border-color:rgba(255,255,255,.35)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .hero{background:#14291d;color:#eaf1ea}:root:not([data-theme="light"]) .hero .btn{background:var(--maize);color:#2a2000}}
+.board{background:var(--surface);color:var(--ink);border-radius:20px;padding:26px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.board h3{margin-bottom:14px}
+.row{display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px dashed var(--line)}
+.row:last-child{border:0}
+.row b{font-family:'Bricolage Grotesque';font-size:1.1rem}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:#2fb866;margin-right:8px;animation:pulse 2s infinite}
+@keyframes pulse{50%{opacity:.35}}
+@media (prefers-reduced-motion:reduce){.dot{animation:none}html{scroll-behavior:auto}}
+.sub{color:var(--mute);margin-bottom:32px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.prod .ic{font-size:2.2rem}
+.prod .price{font:700 1.3rem 'Bricolage Grotesque';color:var(--green)}
+.qty{display:flex;align-items:center;gap:10px;margin-top:12px}
+.qty button{width:38px;height:38px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:1.2rem;cursor:pointer}
+.qty span{min-width:24px;text-align:center;font-weight:600}
+.cart{margin-top:28px;background:var(--surface);border:2px solid var(--green);border-radius:16px;padding:24px;display:grid;gap:14px;grid-template-columns:1fr 1fr}
+.cart .full{grid-column:1/-1}
+label{font-weight:600;font-size:.9rem;display:block;margin-bottom:4px}
+input,select,textarea{width:100%;font:inherit;padding:12px;border-radius:10px;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.total{font:800 1.8rem 'Bricolage Grotesque';color:var(--green)}
+.alt-bg{background:var(--surface);border-block:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:18px;margin-top:28px}
+.stats div{border-left:4px solid var(--maize);padding-left:14px}
+.stats b{display:block;font:800 2.2rem 'Bricolage Grotesque';color:var(--green)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.tag{display:inline-block;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:4px 12px;margin:0 6px 8px 0;font-size:.9rem}
+table{width:100%;border-collapse:collapse;font-size:.95rem}
+th,td{text-align:left;padding:10px;border-bottom:1px solid var(--line)}
+.scroll{overflow-x:auto}
+details{border-bottom:1px solid var(--line);padding:14px 0}
+summary{cursor:pointer;font-weight:600}
+details p{margin:10px 0 0;color:var(--mute)}
+blockquote{margin:0}
+blockquote p{font-size:1.05rem}
+blockquote cite{color:var(--mute);font-size:.9rem;font-style:normal}
+footer{background:var(--green);color:var(--on-green);padding:48px 0 90px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) footer{background:#14291d;color:#eaf1ea}}
+footer .grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+footer a{opacity:.9}
+.wa{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;background:#25d366;color:#fff;text-decoration:none;font-weight:700;padding:14px 20px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+@media (max-width:800px){
+ .hero .wrap,.two,.cart{grid-template-columns:1fr}
+ section{padding:52px 0}
+ nav{position:absolute;top:calc(62px + env(safe-area-inset-top,0px));left:0;right:0;background:var(--bg);flex-direction:column;align-items:flex-start;padding:16px 20px;border-bottom:1px solid var(--line);display:none}
+ nav.open{display:flex}
+ .menu{display:block;background:none;border:1px solid var(--line);color:var(--ink);padding:8px 14px;border-radius:8px;font:600 .9rem Figtree}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <a class="logo" href="#top">Kilimani Hills Dairy</a>
+ <button class="menu" aria-label="Menu" onclick="document.getElementById('nav').classList.toggle('open')">Menu</button>
+ <nav id="nav" onclick="this.classList.remove('open')">
+  <a href="#products">Products</a><a href="#delivery">Delivery</a><a href="#quality">Quality</a><a href="#farm">Our farm</a><a href="#wholesale">Wholesale</a><a href="#faq">FAQ</a><a class="btn" href="#order" style="padding:9px 18px;color:var(--on-green)">Order now</a>
+ </nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+ <div>
+  <h1>Milked at dawn. At your door by 8am.</h1>
+  <p>Fresh, pasteurised milk and dairy from our 120 Friesian and Ayrshire cows in Limuru, Kiambu County. Delivered daily across Nairobi and its environs, with payment by M-Pesa.</p>
+  <p style="display:flex;gap:12px;flex-wrap:wrap"><a class="btn maize" href="#order">Order fresh milk</a><a class="btn alt" href="#wholesale">Wholesale enquiries</a></p>
+ </div>
+ <aside class="board" aria-label="Today at the farm">
+  <h3><span class="dot"></span>Today at the farm</h3>
+  <div class="row"><span>Milk collected (morning)</span><b id="litres">—</b></div>
+  <div class="row"><span>Order cut-off for tomorrow</span><b>8:00 pm</b></div>
+  <div class="row"><span>Delivery window</span><b>6:00 – 9:00 am</b></div>
+  <div class="row"><span>Lab test (today)</span><b style="color:#2fb866">Passed</b></div>
+ </aside>
+</div></div>
+
+<section id="products"><div class="wrap">
+ <h2>Our products</h2>
+ <p class="sub">Choose your quantities, then complete your order below. Prices in Kenya shillings.</p>
+ <div class="grid" id="plist"></div>
+
+ <form class="cart" id="order" onsubmit="return send(event)">
+  <h3 class="full" style="margin:0">Your order</h3>
+  <div class="full" id="summary" style="color:var(--mute)">No items yet. Use + on a product above.</div>
+  <div><label for="nm">Full name</label><input id="nm" required autocomplete="name"></div>
+  <div><label for="ph">Phone (M-Pesa)</label><input id="ph" required inputmode="tel" placeholder="07XX XXX XXX" autocomplete="tel"></div>
+  <div><label for="ar">Delivery area</label>
+   <select id="ar"><option>Kilimani</option><option>Westlands</option><option>Lavington</option><option>Karen</option><option>Kileleshwa</option><option>Kiambu Road</option><option>Ruaka</option><option>Limuru</option><option>Other (we'll confirm)</option></select></div>
+  <div><label for="fq">Frequency</label>
+   <select id="fq"><option>One-time order</option><option>Daily subscription</option><option>Weekly subscription</option></select></div>
+  <div class="full"><label for="ad">Address / landmark</label><textarea id="ad" rows="2" placeholder="Apartment, gate, nearby landmark"></textarea></div>
+  <div class="full" style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
+   <div>Total <span class="total" id="tot">KSh 0</span><br><small style="color:var(--mute)">Delivery free over KSh 500, otherwise KSh 100. Pay by M-Pesa on delivery or via Till No. 123456.</small></div>
+   <button class="btn" type="submit">Send order on WhatsApp</button>
+  </div>
+ </form>
+</div></section>
+
+<section id="delivery" class="alt-bg"><div class="wrap two">
+ <div>
+  <h2>How delivery works</h2>
+  <p>Order by 8:00 pm and your milk is bottled the next morning, chilled below 4°C and on your doorstep before you leave for work. We use insulated crates and reusable glass or food-grade bottles.</p>
+  <p>Subscribers can pause, skip or change quantities any time with a simple WhatsApp message.</p>
+  <h3>Pay your way</h3>
+  <span class="tag">M-Pesa Till</span><span class="tag">M-Pesa on delivery</span><span class="tag">Cash</span><span class="tag">Bank transfer (wholesale)</span>
+ </div>
+ <div class="scroll"><table>
+  <caption style="text-align:left;font-weight:700;padding-bottom:8px">Delivery areas</caption>
+  <tr><th>Area</th><th>Fee</th><th>Arrives by</th></tr>
+  <tr><td>Kilimani, Kileleshwa, Lavington</td><td>KSh 100</td><td>7:00 am</td></tr>
+  <tr><td>Westlands, Parklands</td><td>KSh 100</td><td>7:30 am</td></tr>
+  <tr><td>Karen, Langata</td><td>KSh 150</td><td>8:00 am</td></tr>
+  <tr><td>Kiambu Rd, Ruaka, Runda</td><td>KSh 100</td><td>7:00 am</td></tr>
+  <tr><td>Limuru, Tigoni</td><td>Free</td><td>6:30 am</td></tr>
+ </table></div>
+</div></section>
+
+<section id="quality"><div class="wrap">
+ <h2>Quality you can trust</h2>
+ <p class="sub">Every batch is tested before it leaves the farm.</p>
+ <div class="grid">
+  <div class="card"><h3>KDB licensed</h3><p>Registered with the Kenya Dairy Board and inspected regularly.</p></div>
+  <div class="card"><h3>KEBS certified</h3><p>Our pasteurised milk carries the KEBS Standardization Mark.</p></div>
+  <div class="card"><h3>Tested every morning</h3><p>Alcohol, fat, density and antibiotic-residue tests on each batch.</p></div>
+  <div class="card"><h3>Healthy herd</h3><p>Vaccinated cows, vet-checked monthly, fed on Napier grass, hay and dairy meal.</p></div>
+ </div>
+</div></section>
+
+<section id="farm" class="alt-bg"><div class="wrap two">
+ <div>
+  <h2>A family farm in Limuru</h2>
+  <p>Our family has kept dairy cattle in Limuru's cool highlands for three generations. What began with five cows is now a modern farm with milking parlour, cold chain and a small processing plant, employing 35 people from nearby villages.</p>
+  <p>We also buy surplus milk from 60 smallholder farmers around us at fair, prompt prices, supporting local livelihoods.</p>
+ </div>
+ <div class="stats">
+  <div><b>120</b>Cows milked</div><div><b>1,800 L</b>Daily production</div><div><b>3,500+</b>Households served</div><div><b>60</b>Partner farmers</div>
+ </div>
+</div></section>
+
+<section id="wholesale"><div class="wrap two">
+ <div>
+  <h2>Wholesale and bulk supply</h2>
+  <p>We supply hotels, schools, hospitals, cafés, supermarkets and retailers with consistent quality, invoiced weekly or monthly.</p>
+  <ul><li>Bulk milk from 50 litres a day</li><li>Special pricing and credit terms</li><li>Branded crates and cold-chain vans</li><li>KRA-compliant invoices and delivery notes</li></ul>
+  <a class="btn" href="https://wa.me/254700000000?text=Hello%2C%20I%20would%20like%20a%20wholesale%20quote." target="_blank" rel="noopener">Request a quote</a>
+ </div>
+ <div class="grid" style="grid-template-columns:1fr">
+  <blockquote class="card"><p>We switched our café's milk to Kilimani Hills last year. It steams beautifully and customers notice the taste.</p><cite>Wanjiru M., café owner, Westlands</cite></blockquote>
+  <blockquote class="card"><p>Delivery is always on time and the daily subscription is so easy to manage on WhatsApp. My kids love the yoghurt.</p><cite>Brian O., Kileleshwa</cite></blockquote>
+ </div>
+</div></section>
+
+<section id="faq" class="alt-bg"><div class="wrap">
+ <h2>Questions</h2>
+ <details><summary>Is the milk pasteurised?</summary><p>Yes. Our fresh milk is pasteurised and chilled the same morning. Raw milk is not sold.</p></details>
+ <details><summary>How long does it keep?</summary><p>Refrigerated at 4°C or below, fresh milk lasts 4 to 5 days. Boil or heat as you prefer.</p></details>
+ <details><summary>Can I cancel a subscription?</summary><p>Yes, anytime. Message us before 8:00 pm to pause or cancel the next day's delivery.</p></details>
+ <details><summary>Do you deliver outside Nairobi?</summary><p>We deliver to Kiambu, Limuru and nearby towns. For other areas, contact us for wholesale arrangements.</p></details>
+ <details><summary>Can I visit the farm?</summary><p>Yes. School and family farm tours run on the first Saturday of each month. Book through WhatsApp.</p></details>
+</div></section>
+</main>
+
+<footer><div class="wrap grid">
+ <div><h3>Kilimani Hills Dairy</h3><p>Fresh milk and dairy from Limuru, Kiambu County, Kenya.</p></div>
+ <div><h3>Contact</h3><p>Phone / WhatsApp: <a href="tel:+254700000000">0700 000 000</a><br><a href="mailto:orders@kilimanihillsdairy.co.ke">orders@kilimanihillsdairy.co.ke</a></p></div>
+ <div><h3>Visit</h3><p>Limuru–Tigoni Road, Limuru<br>Mon–Sat, 7:00 am – 5:00 pm</p></div>
+ <div><h3>Licences</h3><p>KDB Reg. No. KDB/0000<br>KEBS Permit No. 00000</p></div>
+</div><div class="wrap"><small>© 2026 Kilimani Hills Dairy. Sample details shown, replace with your real information.</small></div></footer>
+
+<a class="wa" href="https://wa.me/254700000000" target="_blank" rel="noopener">WhatsApp us</a>
+
+<script>
+const P=[
+ {n:'Fresh whole milk',u:'1 litre',p:90,i:'🥛'},
+ {n:'Fresh whole milk',u:'500 ml',p:50,i:'🥛'},
+ {n:'Mala (fermented milk)',u:'500 ml',p:80,i:'🍶'},
+ {n:'Mursik',u:'500 ml',p:100,i:'🏺'},
+ {n:'Natural yoghurt',u:'500 ml',p:150,i:'🍦'},
+ {n:'Strawberry yoghurt',u:'500 ml',p:170,i:'🍓'},
+ {n:'Ghee',u:'250 g',p:450,i:'🧈'},
+ {n:'Butter',u:'250 g',p:380,i:'🧈'},
+ {n:'Cottage cheese',u:'250 g',p:320,i:'🧀'}
+];
+const q=P.map(()=>0);
+const fmt=n=>'KSh '+n.toLocaleString('en-KE');
+document.getElementById('plist').innerHTML=P.map((x,k)=>`<div class="card prod"><div class="ic" aria-hidden="true">${x.i}</div><h3>${x.n}</h3><div style="color:var(--mute)">${x.u}</div><div class="price">${fmt(x.p)}</div><div class="qty"><button type="button" aria-label="Remove one ${x.n}" onclick="ch(${k},-1)">−</button><span id="q${k}">0</span><button type="button" aria-label="Add one ${x.n}" onclick="ch(${k},1)">+</button></div></div>`).join('');
+function sub(){return P.reduce((s,x,k)=>s+x.p*q[k],0)}
+function fee(s){return s===0?0:(s>=500?0:100)}
+function ch(k,d){q[k]=Math.max(0,q[k]+d);document.getElementById('q'+k).textContent=q[k];draw()}
+function draw(){
+ const s=sub(),lines=P.map((x,k)=>q[k]?`${q[k]} × ${x.n} (${x.u}) – ${fmt(x.p*q[k])}`:'').filter(Boolean);
+ document.getElementById('summary').innerHTML=lines.length?lines.join('<br>')+`<br>Delivery: ${fee(s)?fmt(fee(s)):'Free'}`:'No items yet. Use + on a product above.';
+ document.getElementById('tot').textContent=fmt(s+fee(s));
+}
+function send(e){
+ e.preventDefault();
+ const s=sub();
+ if(!s){document.getElementById('summary').textContent='Please add at least one product first.';document.getElementById('products').scrollIntoView();return false}
+ const g=id=>document.getElementById(id).value;
+ const items=P.map((x,k)=>q[k]?`- ${q[k]} x ${x.n} (${x.u})`:'').filter(Boolean).join('\n');
+ const m=`Hello Kilimani Hills Dairy, I'd like to order:\n${items}\n\nTotal: ${fmt(s+fee(s))}\nFrequency: ${g('fq')}\nName: ${g('nm')}\nPhone: ${g('ph')}\nArea: ${g('ar')}\nAddress: ${g('ad')}`;
+ window.open('https://wa.me/254700000000?text='+encodeURIComponent(m),'_blank','noopener');
+ return false;
+}
+const d=new Date();document.getElementById('litres').textContent=(850+((d.getDate()*37)%120))+' litres';
+</script>
+</body>
+</html>
